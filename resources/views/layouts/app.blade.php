@@ -9,31 +9,146 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        .site-footer
+        {
+            background-color:#26272b;
+            padding:45px 0 20px;
+            font-size:15px;
+            line-height:24px;
+            color:#737373;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .site-footer hr
+        {
+            border-top-color:#bbb;
+            opacity:0.5
+        }
+
+        .site-footer hr.small
+        {
+            margin:20px 0
+        }
+
+        .site-footer h6
+        {
+            color:#fff;
+            font-size:16px;
+            text-transform:uppercase;
+            margin-top:5px;
+            letter-spacing:2px
+        }
+
+        .site-footer a
+        {
+            color:#737373;
+        }
+
+        .site-footer a:hover
+        {
+            color:#3366cc;
+            text-decoration:none;
+        }
+
+        .footer-links
+        {
+            padding-left:0;
+            list-style:none
+        }
+
+        .footer-links li
+        {
+            display:block
+        }
+
+        .footer-links a
+        {
+            color:#737373
+        }
+
+        .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+        {
+            color:#3366cc;
+            text-decoration:none;
+        }
+
+        .footer-links.inline li
+        {
+            display:inline-block
+        }
+
+        .site-footer
+        {
+            text-align:left
+        }
+
+        .site-footer .social-icons a
+        {
+            width:40px;
+            height:40px;
+            line-height:40px;
+            margin-left:6px;
+            margin-right:0;
+            border-radius:100%;
+            background-color:#33353d
+        }
+
+        .copyright-text
+        {
+            margin:0
+        }
+
+        @media (max-width:991px)
+        {
+            .site-footer [class^=col-]
+            {
+                margin-bottom:30px
+            }
+        }
+
+        @media (max-width:767px)
+        {
+            .site-footer
+            {
+                padding-bottom:0
+            }
+            .site-footer .copyright-text,.site-footer
+            {
+                text-align:center
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-link">
+                            <a class="nav-link" href="{{ route('welcome') }}">cart</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -61,6 +176,8 @@
                                         {{ __('Logout') }}
                                     </a>
 
+                                    <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -75,6 +192,50 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <!-- Site footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>About</h6>
+
+                        <p class="text-justify">
+                            shop.Shops is small laravel project mocking e-commence site, made for my uni course. This app is full of bugs and bad code and style, please forgive me. If you would like you can visi by github page - feel free to post improvements to my code. PLEASE DON'T USE YOUR REAL PASSWORDS OR ANY OTHER DATA
+                        </p>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Quick Links</h6>
+                        
+                        <ul class="footer-links">
+                            <li><a href="{{ route('products') }}">Products</a></li>
+                            <li><a href="{{ route('welcome') }}">About</a></li>
+                            <li><a href="#">Admin</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Register for free!</h6>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="{{ route('register') }}">
+                                    <button type="button" class="btn btn-outline-danger">Register</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div class="container">
+                <p class="copyright-text">Copyright &copy; 2020:
+                    <a href="https://github.com/pankamyk/">github.com/pankamyk/</a>
+                </p>
+                <br>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
