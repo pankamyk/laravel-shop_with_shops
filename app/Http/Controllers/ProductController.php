@@ -15,7 +15,11 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('layouts.appcopy');
+        $products = Product::all();
+
+        dd($products);
+
+        return view('products');
     }
 
     /**

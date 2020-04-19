@@ -27,9 +27,6 @@
             font-size:15px;
             line-height:24px;
             color:#737373;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
         }
 
         .site-footer hr
@@ -131,6 +128,8 @@
             }
         }
     </style>
+        
+    @yield('style')
 </head>
 <body>
     <div id="app">

@@ -45,7 +45,11 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
+            }
+
+            .strong {
+                font-size: 84px
             }
 
             .links > a {
@@ -81,7 +85,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <i>from&ensp;</i><strong class="strong">Shop</strong>
+                    <i> select&ensp;</i>shops
                 </div>
 
                 <div class="links">
