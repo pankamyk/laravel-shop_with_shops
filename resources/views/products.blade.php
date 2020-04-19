@@ -52,7 +52,7 @@
 
                             <h6>{{ $product->price }}$</h6>
 
-                            <a href="#" class="btn btn-outline-danger">View product</a>                
+                            <a href="/products/{{ $product->id }}" class="btn btn-outline-danger">View product</a>                
                         </div>
                     </div>
                     <!-- Card -->
