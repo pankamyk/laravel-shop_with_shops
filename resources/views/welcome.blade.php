@@ -8,15 +8,17 @@
             <i> select&ensp;</i>shops
         </div>
 
+        <div class="links m-b-md">
+            <a href="{{ route('products') }}">Products</a>
+            <a href="https://github.com/pankamyk/">My GitHub</a>
+        </div>
+
+        <div class="container">
         <div class="links">
-            <a href="https://laravel.com/docs">Docs</a>
-            <a href="https://laracasts.com">Laracasts</a>
-            <a href="https://laravel-news.com">News</a>
-            <a href="https://blog.laravel.com">Blog</a>
-            <a href="https://nova.laravel.com">Nova</a>
-            <a href="https://forge.laravel.com">Forge</a>
-            <a href="https://vapor.laravel.com">Vapor</a>
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+            <p>
+                Welcome in my ecommerce mockup! This site was designed for maximal pleasure with minimal bloat and with my sys-int course in mind. In our shop you'll find first grade shops! Whatever you need - we have it: supermarkets, fast-food chains, small shops! So check out out products or register now FOR FREE!
+            </p>
+        </div>
         </div>
     </div>
 </div>
