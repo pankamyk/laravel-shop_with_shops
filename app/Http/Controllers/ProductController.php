@@ -17,9 +17,7 @@ class ProductController extends Controller
         //
         $products = Product::all();
 
-        dd($products);
-
-        return view('products');
+        return view('products', compact('products'));
     }
 
     /**
