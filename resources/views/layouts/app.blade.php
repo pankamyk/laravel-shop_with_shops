@@ -205,7 +205,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-link">
-                            <a class="nav-link" href="{{ route('welcome') }}">cart</a>
+                            <a class="nav-link" href="{{ route('cart') }}">cart
+                                <span class="badge">{{ Session::has('items') ? count(Session::get('items')) : '' }}</span>
+                            </a>
                         </li>
                     </ul>
 
