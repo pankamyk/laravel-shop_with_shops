@@ -14,7 +14,7 @@
 @section('content')
 <div class="flex-center position-ref full-height">
     <div class="content">
-        <div class="title m-b-md mx-4">
+        <div class="title m-b-md">
             <i>from&ensp;</i><strong class="strong">Shop</strong>
             <i> select&ensp;</i>shops
         </div>
