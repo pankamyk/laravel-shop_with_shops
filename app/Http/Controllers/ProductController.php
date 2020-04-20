@@ -38,6 +38,7 @@ class ProductController extends Controller
     public function addToCart(Request $request, $id)
     {
         $product = Product::find($id);
+        $num = $request->input('ammount');
 
         $items = Session::has('items') ? Session::get('items') : [];
         $total = Session::has('total') ? Session::get('total') : 0;
@@ -45,15 +46,15 @@ class ProductController extends Controller
 
         if (array_key_exists($id, $items)) 
         {
-            $items[$id] += 1;
+            $items[$id] += $num;
         } 
         else 
         {
-            $items[$id] = 1;
+            $items[$id] = $num;
         }
 
         $total += $product->price;
-        $ammount += 1;
+        $ammount += $num;
 
         Session::put('items', $items);
         Session::put('total', $total);

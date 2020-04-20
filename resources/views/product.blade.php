@@ -22,7 +22,10 @@
                     </tr>
                     <tr>
                         <th class="text-center">
-                        <a href="{{ route('product.addtocart', ['id' => $product->id]) }}" class="btn btn-outline-danger">Add to cart!</a>
+                            <form action="{{ route('product.addtocart', ['id' => $product->id]) }}" method="GET">
+                                <input type="number" id="ammount" name="ammount" min="0" max="50" step="1" value="1">
+                                <input class="btn btn-outline-danger" type="submit" value="Add to cart">
+                            </form>
                         </th>
                     </tr>
                 </tbody>
