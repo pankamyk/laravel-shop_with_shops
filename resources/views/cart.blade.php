@@ -5,37 +5,38 @@
     @if ($products)
 
     <div class="row">
-        <div class="col-md-8 d-flex justify-content-center">
-            <ul class="list-group list-group-flush">
+        <div class="col-md-10">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Details</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Ammount</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                @foreach ($products as $item)
-        
-                <li class="list-group-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h3>{{ $item->name }}</h3>
-                            </div>
-                            <div class="col">
-                                <h6>{{ $item->details }}</h6>
-                            </div>
-                            <div class="col">
-                                <h6>{{ $item->price }}$</h6>
-                            </div>
-                            <div class="col">
-                                <form>
-                                    <input type="number" id="ammount" name="ammount" min="0" max="50" step="1" value="{{ Session::get('items')[$item->id] }}"> 
-                                </form> 
-                            </div>
-                        </div>
-                    </div>
-                </li>
-        
-                @endforeach
-        
-            </ul>
+                    @foreach ($products as $item)
+
+                    <tr>
+                        <th>{{ $item->name }}</th>
+                        <th>{{ $item->details }}</th>
+                        <th>{{ $item->price }}</th>
+                        <th>
+                            <form>
+                                <input type="number" id="ammount" name="ammount" min="0" max="50" step="1" value="{{ Session::get('items')[$item->id] }}"> 
+                            </form>
+                        </th>
+                    </tr>
+
+                    @endforeach
+
+                </tbody>
+            </table>
         </div>
-        <div class="col-md-3 d-flex justify-content-center">
+
+        <div class="col-md-2">
             <div class="col">
                 <h3>
                     {{ Session::get('total') }}$
