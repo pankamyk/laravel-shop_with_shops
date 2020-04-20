@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="container">
-    @if (Session::has('items'))
+    @if ($products)
 
     <div class="row">
         <div class="col-md-9 d-flex justify-content-center">
             <ul class="list-group list-group-flush">
 
-                @foreach (Session::get('items') as $item)
+                @foreach ($products as $item)
         
                 <li class="list-group-item">
                     <div class="container">

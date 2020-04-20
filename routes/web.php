@@ -21,9 +21,7 @@ Route::get('/products', 'ProductController@index')->name('products');
 Route::get('/products/{product}', 'ProductController@show');
 Route::get('/add-to-cart/{id}', 'ProductController@addToCart')->name('product.addtocart');
 
-Route::any('/cart', function () {
-    return view('cart');
-})->name('cart');
+Route::any('/cart', 'ProductController@getCart')->name('cart');
 
 Auth::routes();
 

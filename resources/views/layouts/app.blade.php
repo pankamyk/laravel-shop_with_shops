@@ -206,7 +206,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-link">
                             <a class="nav-link" href="{{ route('cart') }}">cart
-                                <span class="badge">{{ Session::has('items') ? count(Session::get('items')) : '' }}</span>
+                                <span class="badge">{{ Session::has('ammount') ? Session::get('ammount') : '' }}</span>
                             </a>
                         </li>
                     </ul>
