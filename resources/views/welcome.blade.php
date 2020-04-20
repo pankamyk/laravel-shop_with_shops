@@ -15,10 +15,8 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
-            <div class="d-flex flex-wrap">
-                <i>from&ensp;</i><strong class="strong">Shop</strong>
-                <i> select&ensp;</i>shops
-            </div>
+            <i>from&ensp;</i><strong class="strong">Shop</strong>
+            <i> select&ensp;</i>shops
         </div>
 
         <div class="links m-b-md">
