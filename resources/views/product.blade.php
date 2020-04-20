@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row my-4">
         <div class="col">
-            <img class="card-img-top" src="https://i.ytimg.com/vi/78mYkbfsXRM/maxresdefault.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{{ $product->url }}" alt="Card image cap">
         </div>
-        <div></div>
+        
         <div class="col">
             <table style="height: 100%; width:100%;">
                 <tbody>

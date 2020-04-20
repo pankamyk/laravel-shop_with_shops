@@ -30,7 +30,7 @@
         }
 
         .full-height {
-            height: 65vh;
+            height: 70vh;
         }
 
         .min-height {

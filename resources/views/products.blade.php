@@ -40,7 +40,7 @@
                     <!-- Card -->
                     <div class="card m-2" style="width: 18rem;">
                         <!-- Card image -->
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/78mYkbfsXRM/maxresdefault.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="{{ $product->url }}" alt="Card image cap">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->
