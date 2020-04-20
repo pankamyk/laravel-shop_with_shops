@@ -5,7 +5,7 @@
     @if ($products)
 
     <div class="row">
-        <div class="col-md-9 d-flex justify-content-center">
+        <div class="col-md-8 d-flex justify-content-center">
             <ul class="list-group list-group-flush">
 
                 @foreach ($products as $item)
@@ -22,6 +22,11 @@
                             <div class="col">
                                 <h6>{{ $item->price }}$</h6>
                             </div>
+                            <div class="col">
+                                <form>
+                                    <input type="number" id="ammount" name="ammount" min="0" max="50" step="1" value="{{ Session::get('items')[$item->id] }}"> 
+                                </form> 
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -30,11 +35,13 @@
         
             </ul>
         </div>
-        <div class="col-md-3">
-            <h3>
-                {{ Session::get('total') }}$
-            </h3>
-            <a href="#" class="btn btn-outline-danger">Go to checkout</a>
+        <div class="col-md-3 d-flex justify-content-center">
+            <div class="col">
+                <h3>
+                    {{ Session::get('total') }}$
+                </h3>
+                <a href="#" class="btn btn-outline-danger">Go to checkout</a>
+            </div>
         </div>
     </div>
 
