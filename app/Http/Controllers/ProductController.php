@@ -53,7 +53,7 @@ class ProductController extends Controller
             $items[$id] = $num;
         }
 
-        $total += $product->price;
+        $total += $product->price*$num;
         $ammount += $num;
 
         Session::put('items', $items);
