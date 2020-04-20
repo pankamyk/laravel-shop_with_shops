@@ -12,7 +12,7 @@
 @endsection
 
 @section('content')
-<div class="flex-center position-ref full-height">
+<div class="container flex-center position-ref full-height">
     <div class="content">
         <div class="title m-b-md">
             <i>from&ensp;</i><strong class="strong">Shop</strong>

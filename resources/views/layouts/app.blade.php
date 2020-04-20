@@ -58,11 +58,11 @@
         }
 
         .title {
-            font-size: 64px;
+            font-size: 44px;
         }
 
         .strong {
-            font-size: 84px
+            font-size: 64px
         }
 
         .links > a {
