@@ -77,4 +77,23 @@ class ProductController extends Controller
         
         return view('cart', compact('products'));
     }
+
+    public function getOrder(Request $request)
+    {
+        if (Session::has('items')) 
+        {
+            $total = Session::get('total');
+            $ammount = Session::get('ammount');
+        } 
+        else 
+        {
+            $total = null;
+            $ammount = null;
+        }
+        
+        return view('order', [
+            'total' => $total,
+            'ammount' => $ammount
+        ]);
+    }
 }

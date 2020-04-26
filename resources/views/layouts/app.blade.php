@@ -21,12 +21,23 @@
 
     <style>
         html, body {
-            background-color: #fff;
             color: #636b6f;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: white;
+            border-bottom: white;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            border-left: 1px solid #dee2e6;
+            border-right: 1px solid #dee2e6;
+            border-bottom: 1px solid #dee2e6;
         }
 
         .full-height {

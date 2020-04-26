@@ -38,10 +38,10 @@
 
         <div class="col-md-2">
             <div class="col">
-                <h3>
+                <h5>
                     {{ Session::get('total') }}$
-                </h3>
-                <a href="#" class="btn btn-outline-danger">Go to checkout</a>
+                </h5>
+                <a href="{{ route('order') }}" class="btn btn-outline-danger">Go to checkout</a>
             </div>
         </div>
     </div>
