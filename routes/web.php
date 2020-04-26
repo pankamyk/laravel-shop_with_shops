@@ -25,4 +25,5 @@ Route::any('/cart', 'ProductController@getCart')->name('cart');
 
 Auth::routes();
 
+Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
 Route::get('/home', 'HomeController@index')->name('home');
