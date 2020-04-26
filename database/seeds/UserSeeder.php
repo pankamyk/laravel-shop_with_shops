@@ -18,5 +18,12 @@ class UserSeeder extends Seeder
             'is_admin' => true,
             'password' => Hash::make('admin1234')
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'employee',
+            'email' => 'employee@employee.com',
+            'is_employee' => true,
+            'password' => Hash::make('employee1234')
+        ]);
     }
 }

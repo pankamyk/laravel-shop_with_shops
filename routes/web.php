@@ -27,4 +27,5 @@ Route::get('/cart/order', 'ProductController@getOrder')->name('order');
 Auth::routes();
 
 Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
+Route::get('/employee/home', 'HomeController@employee')->middleware('employee');
 Route::get('/home', 'HomeController@index')->name('home');
