@@ -5,14 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Admin</div>
  
                 <div class="card-body">
-                    @if(auth()->user()->is_admin == 1)
-                        <a href="{{url('/admin/home')}}">Admin</a>
-                    @else
-                        <div class=”panel-heading”>Normal User</div>
-                    @endif
+                    <div class="container flex-center">
+                        <li class="nav-link">
+                            <a class="nav-link" href="{{ route('users.index') }}">Manage Users</a>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>

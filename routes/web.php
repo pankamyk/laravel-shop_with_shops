@@ -29,3 +29,8 @@ Auth::routes();
 Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
 Route::get('/employee/home', 'HomeController@employee')->middleware('employee');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/employee/products', 'EmployeeProductController')->middleware('employee');
+Route::resource('/employee/orders', 'OrderController')->middleware('employee');
+
+Route::resource('/admin/users', 'UserController')->middleware('admin');

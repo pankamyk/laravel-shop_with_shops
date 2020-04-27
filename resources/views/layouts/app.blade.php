@@ -215,11 +215,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-link">
-                            <a class="nav-link" href="{{ route('cart') }}">cart
-                                <span class="badge">{{ Session::has('ammount') ? Session::get('ammount') : '' }}</span>
-                            </a>
-                        </li>
+                        @auth
+                            @if(auth()->user()->is_admin == 1 || auth()->user()->is_employee == 1)
+                            @else
+                                <li class="nav-link">
+                                    <a class="nav-link" href="{{ route('cart') }}">cart
+                                        <span class="badge">{{ Session::has('ammount') ? Session::get('ammount') : '' }}</span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a class="nav-link" href="{{ route('products') }}">products</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-link">
+                                <a class="nav-link" href="{{ route('cart') }}">cart
+                                    <span class="badge">{{ Session::has('ammount') ? Session::get('ammount') : '' }}</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a class="nav-link" href="{{ route('products') }}">products</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

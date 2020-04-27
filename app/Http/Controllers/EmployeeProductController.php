@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 
-class AdminPanelController extends Controller
+class EmployeeProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class AdminPanelController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+
+        return view('employeeproducts', compact('products'));
     }
 
     /**
@@ -25,6 +27,7 @@ class AdminPanelController extends Controller
     public function create()
     {
         //
+        return view('layouts.app');
     }
 
     /**
