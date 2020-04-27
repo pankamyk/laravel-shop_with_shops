@@ -27,7 +27,7 @@ class EmployeeProductController extends Controller
     public function create()
     {
         //
-        return view('layouts.app');
+        return view('createproduct');
     }
 
     /**
