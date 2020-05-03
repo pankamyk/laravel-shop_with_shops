@@ -63,6 +63,32 @@ class ProductController extends Controller
         return redirect()->route('products');
     }
 
+    public function updateCart(Request $request)
+    {
+        $items = Session::has('items') ? Session::get('items') : [];
+        
+        $ret_items = [];
+        $ammount = 0;
+        $total = 0;
+
+        foreach ($items as $key => $value) {
+            if ($request->input("ammount$key") > 0) {
+                $ret_items[$key] = $request->input("ammount$key");
+                $ammount += $request->input("ammount$key");
+                $total +=$request->input("ammount$key") * Product::find($key)->price;
+            }
+        }
+
+        Session::put('items', $ret_items);
+        Session::put('total', $total);
+        Session::put('ammount', $ammount);
+
+        $ids = array_keys($ret_items);
+        $products = Product::find($ids);
+
+        return view('cart', compact('products'));
+    }
+
     public function getCart(Request $request)
     {
         if (Session::has('items')) 

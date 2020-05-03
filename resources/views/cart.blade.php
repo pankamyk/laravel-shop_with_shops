@@ -6,6 +6,7 @@
 
     <div class="row">
         <div class="col-md-10">
+            <form action="{{ route('update') }}" method="GET">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -24,16 +25,16 @@
                         <th>{{ $item->details }}</th>
                         <th>{{ $item->price }}</th>
                         <th>
-                            <form>
-                                <input type="number" id="ammount" name="ammount" min="0" max="50" step="1" value="{{ Session::get('items')[$item->id] }}"> 
-                            </form>
+                            <input type="number" id="ammount{{ $item->id }}" name="ammount{{ $item->id }}" min="0" max="50" step="1" value="{{ Session::get('items')[$item->id] }}"> 
                         </th>
                     </tr>
 
                     @endforeach
-
+                
                 </tbody>
             </table>
+                <input class="btn btn-outline-danger" type="submit" value="Update cart">
+            </form>
         </div>
 
         <div class="col-md-2">
