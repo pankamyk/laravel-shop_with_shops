@@ -53,7 +53,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" onclick="document.cookie='email='+document.getElementById('email').value;document.cookie='password='+document.getElementById('password').value;">
                                     {{ __('Login') }}
                                 </button>
 
@@ -70,4 +70,23 @@
         </div>
     </div>
 </div>
+<script>
+    function readCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+        for(let i=0;i < ca.length;i++) {
+            let c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+    return null;
+    }
+    
+    window.onload = function () {
+        let email = readCookie("email");
+        let password = readCookie("password");
+        document.getElementById("email").value = email;
+        document.getElementById("password").value = password;
+    }
+</script>
 @endsection
