@@ -33,8 +33,13 @@
                                         <td>{{ $item->is_employee }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="actions">
-                                                <button type="button" class="btn btn-sm btn-danger">Del</button>
-                                                <button type="button" class="btn btn-sm btn-info">Block</button>
+                                                <form action="{{ route('users.destroy', $item->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger">Del</button>
+                                                </form>
+                                                
+                                                <a class="btn btn-sm btn-info" href="{{ route('users.edit', $item->id)}}" class="btn btn-primary">Edit</a>
                                             </div>
                                         </td>
                                     </tr>
