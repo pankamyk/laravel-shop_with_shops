@@ -8,4 +8,4 @@ Currently in development.
 
 Clone repo, run "composer install", make .env and edit it to suit your needs, generate key.
 
-Depends on php, laravel, postgresql.
+Depends on composer, php, laravel, postgresql.
