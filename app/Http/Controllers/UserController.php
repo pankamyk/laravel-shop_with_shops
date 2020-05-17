@@ -80,9 +80,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('edituser', compact('user'));
-
-        
+        return view('edituser', compact('user'));        
     }
 
     /**

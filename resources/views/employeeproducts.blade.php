@@ -43,8 +43,14 @@
                                         <td>{{ $item->id }}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="actions">
-                                                <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                                                <button type="button" class="btn btn-sm btn-danger">Del</button>
+                                                <a class="btn btn-sm btn-info" href="{{ route('products.edit', $item->id)}}" class="btn btn-primary">Edit</a>
+
+                                                <form action="{{ route('products.destroy', $item->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-sm btn-danger">Del</button>
+                                                </form>
+
                                                 <button type="button" class="btn btn-sm btn-info">Show</button>
                                             </div>
                                         </td>

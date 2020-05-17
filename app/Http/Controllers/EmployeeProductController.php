@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class EmployeeProductController extends Controller
 {
@@ -38,7 +39,27 @@ class EmployeeProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:55'],
+            'details' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'integer'],
+            'category' => ['required', 'integer'],
+            'description' => ['required', 'string', 'max:355'],
+            'url' => ['required', 'string', 'max:155'],
+        ]);
+        
+        $product = new Product;    
+
+        $product->name = $validatedData['name'];
+        $product->details = $validatedData['details'];
+        $product->url = $validatedData['url'];
+        $product->price = $validatedData['price'];
+        $product->category = $validatedData['category'];
+        $product->description = $validatedData['description'];
+
+        $product->save();
+
+        return Redirect::to('employee/products');
     }
 
     /**
@@ -58,9 +79,11 @@ class EmployeeProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('editproduct', compact('product'));
     }
 
     /**
@@ -70,9 +93,30 @@ class EmployeeProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:55'],
+            'details' => ['required', 'string', 'max:255'],
+            'price' => ['required', 'integer'],
+            'category' => ['required', 'integer'],
+            'description' => ['required', 'string', 'max:355'],
+            'url' => ['required', 'string', 'max:155'],
+        ]);
+
+        $product = Product::find($id);
+
+        $product->name = $validatedData['name'];
+        $product->details = $validatedData['details'];
+        $product->url = $validatedData['url'];
+        $product->price = $validatedData['price'];
+        $product->category = $validatedData['category'];
+        $product->description = $validatedData['description'];
+
+        $product->save();
+
+        return Redirect::to('employee/products');
+
     }
 
     /**
@@ -81,8 +125,11 @@ class EmployeeProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return Redirect::to('employee/products');
     }
 }
