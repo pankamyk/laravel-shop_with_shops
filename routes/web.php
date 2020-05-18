@@ -23,6 +23,7 @@ Route::get('/add-to-cart/{id}', 'ProductController@addToCart')->name('product.ad
 
 Route::get('/cart', 'ProductController@getCart')->name('cart');
 Route::get('/cart/order', 'ProductController@getOrder')->name('order');
+Route::post('/cart/order', 'ProductController@postOrder')->name('postorder');
 Route::get('/cart/update', 'ProductController@updateCart')->name('update');
 
 Auth::routes();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
@@ -122,4 +123,28 @@ class ProductController extends Controller
             'ammount' => $ammount
         ]);
     }
+
+    public function postOrder(Request $request)
+    {
+        $order = new Order;
+
+        $order->person = $request->email;
+        $order->delivery = $request->delivery . ';' . $request->address . ';' . $request->postalcode;
+        $order->payment = $request->payment;
+        $order->products = json_encode(Session::get('items'));
+
+        $order->save();
+        
+        $request->session()->flush();
+
+        return redirect()->route('products');
+    }
 }
+
+
+
+
+
+
+
+

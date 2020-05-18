@@ -17,35 +17,36 @@
             </li>
         </ul>
 
-        <form>
+        <form method="POST" action="{{ route('postorder') }}">
+            @csrf
             <div class="tab-content bg-white" id="TabContent">
                 <div class="tab-pane fade show active" id="personaldata" role="tabpanel" aria-labelledby="home-tab">
                     <div class="container pt-3">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="surname" placeholder="Surname">
+                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Surname" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email">
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"placeholder="Email" required>
                             <small id="emailHelp" class="form-text text-muted">We'll send details to this address.</small>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Address">
+                            <input type="text" pattern="[a-zA-Z]+\s[0-9]+" class="form-control" id="address" aria-describedby="addressHelp" name="address" placeholder="Address" required>
                             <small id="addressHelp" class="form-text text-muted">Enter your street name followed by your home number.</small>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="postalcode" placeholder="Postal Code">
+                            <input type="text" pattern="\d{2}-\d{3}" class="form-control" id="postalcode" name="postalcode" placeholder="Postal Code" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="city" placeholder="City">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="country" placeholder="Country">
+                            <input type="text" class="form-control" id="country" name="country" placeholder="Country" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="number" placeholder="Phone number">
+                            <input type="text" class="form-control" id="number" name="phonenumber" placeholder="Phone number" required>
                         </div>
                     </div>
                 </div>
@@ -57,7 +58,7 @@
                             <tr>
                                 <td>
                                     <div class="container">
-                                        <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="pickup" checked>
+                                        <input class="form-check-input" type="radio" name="delivery" id="delivery1" value="pickup" checked required>
                                     </div>         
                                 </td>
                                 <td>Personal pickup</td>
@@ -79,7 +80,7 @@
                         </table>
 
                         <div class="form-group">
-                            <input type="text" class="form-control" id="comment" aria-describedby="commentHelp" placeholder="Additional comments">
+                            <input type="text" class="form-control" id="comment" aria-describedby="commentHelp" name="comment" placeholder="Additional comments">
                             <small id="commentHelp" class="form-text text-muted">If you have anny additional comments for your order, please leave them here</small>
                         </div>
                     </div>
@@ -92,7 +93,7 @@
                             <tr>
                                 <td>
                                     <div class="container">
-                                        <input class="form-check-input" type="radio" name="payment" id="payment1" value="cash" checked>
+                                        <input class="form-check-input" type="radio" name="payment" id="payment1" value="cash" checked required>
                                     </div>         
                                 </td>
                                 <td>Cash on delivery</td>

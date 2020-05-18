@@ -17,7 +17,7 @@
                                     <th>Payment</th>
                                     <th>Client</th>
                                     <th>Status</th>
-                                    <th>Date</th>
+                                    <th>Products</th>
                                     <th>Action</th>
                                 </tr>
                                 <tr>
@@ -45,64 +45,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>DPD</td>
-                                    <td>Cash</td>
-                                    <td>cheki@breki.com</td>
-                                    <td>
-                                        <span class="badge badge-success">Delivered</span>
-                                    </td>
-                                    <td>1-11-2019</td>
-                                    <td><button class="btn btn-outline-info my-2 my-sm-0" type="submit">Show</button></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Personal</td>
-                                    <td>Cash</td>
-                                    <td>adam@example.com</td>
-                                    <td>
-                                        <span class="badge badge-info">Processing</span>
-                                    </td>
-                                    <td>1-11-2019</td>
-                                    <td><button class="btn btn-outline-info my-2 my-sm-0" type="submit">Show</button></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>DPD</td>
-                                    <td>Cash</td>
-                                    <td>janina0@example.com</td>
-                                    <td>
-                                        <span class="badge badge-danger">Aborted</span>
-                                    </td>
-                                    <td>1-11-2019</td>
-                                    <td><button class="btn btn-outline-info my-2 my-sm-0" type="submit">Show</button></td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Personal</td>
-                                    <td>Card</td>
-                                    <td>uganda69@example.com</td>
-                                    <td>
-                                        <span class="badge badge-info">Processing</span>
-                                    </td>
-                                    <td>1-11-2019</td>
-                                    <td><button class="btn btn-outline-info my-2 my-sm-0" type="submit">Show</button></td>
-                                </tr>
-                                {{-- 
-                                    @forelse ($orders as $item)
+                                @forelse ($orders as $item)
                                     <tr>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->details }}</td>
                                         <td>{{ $item->id }}</td>
+                                        <td>{{ $item->delivery }}</td>
+                                        <td>{{ $item->payment }}</td>
+                                        <td>{{ $item->person }}</td>
+                                        <td><span class="badge badge-success">Ordered</span></td>
+                                        <td>{{ $item->products }}</td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-warning">Edit</button>
-                                            <button type="button" class="btn btn-sm btn-danger">Del</button>
-                                            <button type="button" class="btn btn-sm btn-info">Show</button>
+                                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Show</button>
                                         </td>
                                     </tr>
                                 @empty
-                                @endforelse --}}
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
