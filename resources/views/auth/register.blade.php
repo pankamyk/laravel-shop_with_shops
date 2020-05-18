@@ -64,6 +64,11 @@
                             <div class="col-md-4"></div>
                             <div class="col-md-6">
                                 <div class="g-recaptcha" data-sitekey="6LftDvkUAAAAALbC6xy5Jx8OoAjF1py5O9jfVQof"></div>
+                                @if($errors->has('g-recaptcha-response'))
+                                    <span class"invalid-feedback" style="display:block">
+                                        <strong>{{ @errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group row mb-0">
