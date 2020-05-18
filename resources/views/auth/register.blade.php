@@ -66,9 +66,9 @@
                                 <div class="g-recaptcha" data-sitekey="6LftDvkUAAAAALbC6xy5Jx8OoAjF1py5O9jfVQof"></div>
                                 @error('g-recaptcha-response')
                                     <span class"invalid-feedback" style="display:block">
-                                        <strong>{{ @errors->first('g-recaptcha-response') }}</strong>
+                                        <strong>{{ @message }}</strong>
                                     </span>
-                                @endif
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row mb-0">
