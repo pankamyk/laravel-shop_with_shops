@@ -26,7 +26,7 @@ Route::get('/cart/order', 'ProductController@getOrder')->name('order');
 Route::post('/cart/order', 'ProductController@postOrder')->name('postorder');
 Route::get('/cart/update', 'ProductController@updateCart')->name('update');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
 Route::get('/employee/home', 'HomeController@employee')->middleware('employee');
