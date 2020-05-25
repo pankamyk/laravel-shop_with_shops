@@ -30,7 +30,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/admin/home', 'HomeController@admin')->middleware('admin');
 Route::get('/employee/home', 'HomeController@employee')->middleware('employee');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 Route::resource('/employee/products', 'EmployeeProductController')->middleware('employee');
 Route::resource('/employee/orders', 'OrderController')->middleware('employee');
